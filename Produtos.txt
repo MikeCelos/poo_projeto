@@ -1,0 +1,17 @@
+Joao Francisco; 11111; 1
+Francisco;  2023220012; 2
+Simao; 2222; 3
+fim
+vinho branco, 13, 1, vinho branco de pacote, 3.vinho verde, 15, 2, vinho verde de pacote,4; 12345, Francisco, 12/12/2024
+vinho branco, 13, 1, vinho branco de pacote, 3.vinho verde, 15, 2, vinho verde de pacote,4; 12346, Joao Francisco, 10/12/2024
+olanzapina, 10, 3, dormir, 5.vinho verde, 15, 2, vinho verde de pacote,3; 1237, Francisco, 8/12/2024
+brufene, 8, 4, dor, 3.vinho verde, 15, 2, vinho verde de pacote,2; 1238, Simao, 5/11/2024
+fim
+Atr; massa,6,5,massa do Tibete,69,nao, ISO22000/FSSC22000 ; arroz,7,6, arroz da china,65, sim,GMP; feijao, 7,7,feijao do algarve,25,nao,HACCP
+Ati;  camarao,15,8,camarao de pombal,55,sim, congelados; peixe,5,9,peixe de anadia,30,nao, congelados; sardinha,16,10,sardinha de lamego,60,nao, enlatados; atum,3,11,atum de soure,41,sim, enlatados;Vinho do porto,20,12,vinho de braga,15,nao, vinho;vinho branco,13,1,vinho branco de pacote,48,nao, vinho;vinho verde,15,2, vinho verde de pacote,34, nao,vinho
+Atn; pizza,10,16,pizza italiana,93,nao; salsa,3,17,salsa mexicana,60,nao; couve,3,18,couve filandesa,50,sim
+Fnp; gloss,40,19,gloss vermelho,80,beleza; batom,70,20,batom para os labios,70,beleza;opioide,30,21,pain killer,90,bem-estar; olanzapina,10,3,dormir,50,bem-estar; raçao,12,23,comida para animais,30,animais; pastilha,2,24,pastilha refrescante,90,animais;pilhas,4,25,AAA,98,outro; escova,7,26,colgate,23,outro
+Fp; aderol,12,30,medicamento para a tosse,29; buscopam,13,31,medicamento para a azia,30
+fim
+
+
