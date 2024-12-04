@@ -2,25 +2,26 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
+import java.io.Serializable;
 import java.util.List;
 /**
  * class que gere aa faturas dos produtos
  */
-public class Fatura {
+public class Fatura implements Serializable{
     /**
      * lista dos produtos
      */
-    private List<Produto> produtoList;
+    protected List<Produto> produtoList;
 
     /**
      * numero da fatura
      */
-    private int numeroF;
+    protected int numeroF;
 
     /**
      * nome do cliente
      */
-    private String nomeC;
+    protected String nomeC;
 
     /**
      * dia da data
@@ -150,4 +151,17 @@ public class Fatura {
     public void setAno(int ano) {
         this.ano = ano;
     }
+
+    @Override
+    public String toString() {
+        return "Fatura{" +
+                "produtoList=" + produtoList +
+                ", numeroF=" + numeroF +
+                ", nomeC='" + nomeC + '\'' +
+                ", dia=" + dia +
+                ", mes=" + mes +
+                ", ano=" + ano +
+                '}';
+    }
+
 }

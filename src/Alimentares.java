@@ -3,14 +3,15 @@
  * @version 1.0
  */
 
+import java.io.Serializable;
 /**
  * class para gerir os produtos alimentares
  */
-public class Alimentares extends Produto{
+public abstract class Alimentares extends Produto implements Serializable {
     /**
      * se o produto é biologico
      */
-    private boolean biologico;
+    protected boolean biologico;
 
     /**
      * construtor da class do produtos alimentares
@@ -36,9 +37,23 @@ public class Alimentares extends Produto{
 
     /**
      * setter do biologico
-     * @param biologico
+     * @param biologico se o produto é biologico ou nao
      */
     public void setBiologico(boolean biologico) {
         this.biologico = biologico;
     }
+
+    @Override
+    public String toString() {
+        return "Alimentares{" +
+                "biologico=" + biologico +
+                '}';
+    }
+
+    /**
+     * metodo abstrato que calcula o IVA
+     * @param localizacao localização do cliente
+     * @return valor do produto com o iva
+     */
+    public abstract double calculaIVA(int localizacao);
 }

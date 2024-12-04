@@ -2,16 +2,18 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
+import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * class que gere os produtos de farmacia com taxa de prescricao normal
  */
-public class NormalPrescricao extends Farmacia{
+public class NormalPrescricao extends Farmacia implements Serializable{
 
     /**
      * lista das categorias do produto farmaceutico com taxa de prescricao normal
      */
-    String[] categorias;
+    protected String[] categorias;
 
     /**
      * contrutor da class NormalPrescricao
@@ -45,12 +47,10 @@ public class NormalPrescricao extends Farmacia{
 
     /**
      * metodo que calcula o valor do iva com prescricao
-     * @param valor valor do produto farmaceutico com taxa de prescricao normal
      * @param localizacao localizacao do cliente
-     * @param categorias categorias do produto farmaceutico com taxa de prescricao normal
      * @return return do valor com prescricao do produto farmaceutico com taxa de prescricao normal
      */
-    public double calculaPrescricao(int valor, int localizacao, String[] categorias){
+    public double calculaIVA(int localizacao){
         double desconto=0;
         for(int i =0; i<categorias.length; i++){
             if(categorias[i].equalsIgnoreCase("animais")){
@@ -69,5 +69,12 @@ public class NormalPrescricao extends Farmacia{
                 valor+= valor*(0.23- desconto); //acores
         }
         return valor;
+    }
+
+    @Override
+    public String toString() {
+        return "NormalPrescricao{" +
+                "categorias=" + Arrays.toString(categorias) +
+                '}';
     }
 }

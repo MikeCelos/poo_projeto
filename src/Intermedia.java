@@ -2,12 +2,14 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
+import java.io.Serializable;
+import java.util.Arrays;
 
 /**
  * class que gere os produtos de taxas intermedias
  * dos produtos alimentares
  */
-public class Intermedia extends Alimentares{
+public class Intermedia extends Alimentares implements Serializable{
     /**
      * lista de categorias
      */
@@ -44,37 +46,42 @@ public class Intermedia extends Alimentares{
         this.categorias = categorias;
     }
 
-    /**
-     * metodo que calcula o valor do produto alimentar de class intermedia
-     * com iva
-     * @param valor valor do produto alimentar de class intermedia
-     * @param localizacao localizacao do cliente
-     * @param categorias categorias do produto alimentar de class intermedia
-     * @param biologico se o produto alimentar de class intermedia é biologico ou nao
-     * @return valor do produto alimentar de class intermedia com iva
-     */
-    public double calculaIVA(int valor, int localizacao, String[] categorias, boolean biologico){
-        double desconto=0;
-        for(int i =0; i<categorias.length; i++){
-            if(categorias[i].equalsIgnoreCase("vinho")){
+
+    public double calculaIVA(int localizacao) {
+        double desconto = 0;
+        for (String categoria : categorias) {
+            if (categoria.equalsIgnoreCase("vinho")) {
                 desconto = 0.01;
+                break; // No need to continue checking after finding "vinho"
             }
         }
-        if(biologico){
+        if (isBiologico()) {
             desconto += 0.10;
         }
-        switch (localizacao){
-            case(1):
-                valor += valor*(0.13 + desconto);
-                break;
 
-            case(2):
-                valor += valor*(0.12 + desconto);
+        double taxaBase;
+        switch (localizacao) {
+            case 1:
+                taxaBase = 0.13;
                 break;
-            case(3):
-                valor+= valor*(0.09 + desconto);
-
+            case 2:
+                taxaBase = 0.12;
+                break;
+            case 3:
+                taxaBase = 0.09;
+                break;
+            default:
+                throw new IllegalArgumentException("Localizacao invalida");
         }
-        return valor;
+        return getValor() * (1 + taxaBase + desconto); // Return the new value without modifying 'valor'
     }
+
+
+    @Override
+    public String toString() {
+        return "Intermedia{" +
+                "categorias=" + Arrays.toString(categorias) +
+                '}';
+    }
+
 }

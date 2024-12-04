@@ -2,10 +2,11 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
+import java.io.Serializable;
 /**
  * class que gere os produtos farmaceutico
  */
-public class Farmacia extends Produto{
+public abstract class Farmacia extends Produto implements Serializable{
 
     /**
      * contrutor da class farmacia
@@ -18,4 +19,11 @@ public class Farmacia extends Produto{
     public Farmacia(String nome, double valor, int codigo,String descricao,int quantidade){
         super(nome, valor, codigo, descricao, quantidade);
     }
+
+    /**
+     * metodo abstrato que calcula o IVA
+     * @param localizacao localização do cliente
+     * @return valor do produto com o iva
+     */
+    public abstract double calculaIVA(int localizacao);
 }

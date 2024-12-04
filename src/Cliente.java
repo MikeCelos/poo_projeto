@@ -2,15 +2,19 @@
  * @author Francisco Vaasconcelos, Joao Francisco
  * @version 1.0
  */
+import java.io.Serializable;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * class que gere os clientes
  */
-public class Cliente {
+public class Cliente implements Serializable{
     /**
      * nome do cliente
      */
-    private String nome;
+    protected String nome;
 
     /**
      * contribuinte do cliente
@@ -20,7 +24,7 @@ public class Cliente {
     /**
      * localizacao do cliente
      */
-    private int localizacao;
+    protected int localizacao;
 
     /**
      * contrutor da class cliente
@@ -81,4 +85,27 @@ public class Cliente {
     public void setLocalizacao(int localizacao) {
         this.localizacao = localizacao;
     }
+
+
+    @Override
+    public String toString() {
+        String loc="";
+        if(localizacao == 1){
+           loc = "Continente";
+        }
+        else if(localizacao == 3){
+            loc = "Madeira";
+        }
+        else if(localizacao == 2){
+            loc = "Açores";
+
+        }
+
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", contribuinte=" + contribuinte +
+                ", localizacao=" + loc +
+                '}';
+    }
 }
+

@@ -1,0 +1,4 @@
+massa, 6, 5,massa do Tibete, 5.vinho verde, 15, 2, vinho verde de pacote,4; 123471, Simao, 12/12/2024
+vinho branco, 13, 1, vinho branco de pacote, 3.vinho verde, 15, 2, vinho verde de pacote,4; 123489, Joao Francisco, 10/12/2024
+olanzapina, 10, 3, dormir, 5.vinho verde, 15, 2, vinho verde de pacote,3; 12395, Francisco, 8/12/2024
+brufene, 8, 4, dor, 3.vinho verde, 15, 2, vinho verde de pacote,2; 12310, Simao, 5/11/2024

@@ -2,11 +2,11 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
-
+import java.io.Serializable;
 /**
  * class que gere os produtos alimentares de texa normal
  */
-public class Normal extends Alimentares{
+public class Normal extends Alimentares implements Serializable{
 
     /**
      * construtor da class Normal
@@ -23,12 +23,10 @@ public class Normal extends Alimentares{
 
     /**
      * metodo que calcula o valor do produto alimentar de taxa normal com IVA
-     * @param valor valor do produto alimentar de taxa normal
      * @param localizacao localizacao do cliente
-     * @param biologico se o produto alimentar de taxa normal é biologico ou nao
      * @return valor do produto alimentar de taxa normal com IVA
      */
-    public double calculaIVA(int valor, int localizacao, boolean biologico){
+    public double calculaIVA(int localizacao){
         int desconto =0;
         if(biologico){
             desconto += 0.10;
@@ -43,8 +41,8 @@ public class Normal extends Alimentares{
                 break;
             case(3):
                 valor+= valor*0.16; //acores
-
         }
         return valor;
     }
+
 }

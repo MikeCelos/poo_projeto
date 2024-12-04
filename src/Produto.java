@@ -2,21 +2,21 @@
  * @author Francisco Vasconcelos, Joao Francisco
  * @version 1.0
  */
-
+import java.io.Serializable;
 /**
  * class que gere o produto
  */
-public class Produto {
+public class Produto implements Serializable{
 
     /**
      * nome do produto
      */
-    private String nome;
+    protected String nome;
 
     /**
      * valor do produto
      */
-    private double valor;
+    protected double valor;
 
     /**
      * codigo do produto
@@ -31,7 +31,7 @@ public class Produto {
     /**
      * quantidade do produto
      */
-    private int quantidade;
+    protected int quantidade;
 
     /**
      * contrutor da class Produto
@@ -128,5 +128,19 @@ public class Produto {
      */
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", valor=" + valor +
+                ", codigo=" + codigo +
+                ", descricao='" + descricao + '\'' +
+                ", quantidade=" + quantidade +
+                '}';
+    }
+    public double calculaIVA(int localidade){
+        return 0;
     }
 }
